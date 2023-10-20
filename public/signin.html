@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
+    <link href="./styles.css" rel="stylesheet">
+    <title>Iniciar Sesión - P5 Proyecto Final - Agustin Trezza.</title>
+</head>
+
+<body class="bg-neutral-950 border-box">
+
+    <!-- HEADER -->
+    <nav class="bg-neutral-950 fixed w-full z-20 top-0 left-0 border-b border-gray-600 dark:border-gray-800">
+        <div class=" w-full flex flex-wrap items-center justify-between mx-auto px-4 py-1 md:py-3">
+            <a href="https://flowbite.com/" class="flex items-center">
+                <img class="logo-plataforma5 w-10 h-10 rounded ms-0 lg:ms-3" src="./imagenes/p5logo.jpeg" alt="logo-p5">
+                <div class="flex items-center altura">
+                    <div class="flex flex-col ms-1">
+                        <h2 class="font-thin text-white text-xl lg:text-2xl m-0 ">Proyecto Disco</h2>
+                        <h2 class="text-violet-500 text-ms">Agustin Trezza</h2>
+                    </div>
+                </div>
+            </a>
+
+            <div class=" md:order-2 items-center">
+                <div id="2" class="flex clasee">
+                    <div class="flex items-center clasee">
+                        <p class="text-white text-2xl me-4" id="nombre-usuario"></p>
+                        <img src="./imagenes/perrito.png" class="w-11 h-11 me-4 rounded-full">
+                        <button onclick=cerrarSesion() class="bg-red-500 rounded cursor-pointer p-2 text-white">Cerrar Sesión</button>
+                        <!-- <img onclick=cerrarSesion() class="w-10 h-10 rounded-full me-4 cursor-pointer"
+                            src="./imagenes/cerrar-sesion.png" alt="logo-cerrar-sesion"> -->
+                    </div>
+                    <div>
+                    </div>
+                </div>
+
+
+                <div class="flexi p-2 md:p-0">
+                    <div>
+                        <a href="./signin.html" id="3"
+                            class="text-violet-400 hover:text-violet-600 font-thin text-2xl"></a>
+                    </div>
+
+                    <div id="4" class="">
+                        <button onclick=cerrarSesion() class="md:hidden bg-red-500 rounded cursor-pointer p-2 text-white">Cerrar Sesión</button>
+                        <!-- <img onclick=cerrarSesion() class="w-10 h-10 rounded-full me-2 cursor-pointer md:hidden"
+                            src="./imagenes/cerrar-sesion.png" alt="logo-cerrar-sesion"> -->
+                    </div>
+
+                    <div>
+                        <button data-collapse-toggle="navbar-sticky" type="button"
+                            class="ms-2 inline-flex items-center p-0 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                            aria-controls="navbar-sticky" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 17 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                            </svg>
+                        </button>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+            <!-- HEADER REDIRECCIONES -->
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+
+                <ul class="flex items-center gap-1 flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-neutral-950 md:flex-row space-x-3 lg:space-x-8 md:mt-0 md:border-0 md:neutral-950 dark:bg-neutral-950 md:dark:bg-neutral-950 dark:border-gray-700">
+                
+
+                <!-- DROPDOWN CONTENIDO -->
+                <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-white bg-neutral-950 hover:text-violet-400 hover:bg-neutral-950 focus:ring-4 focus:outline-none focus:ring-red-400 font-medium rounded-lg text-base px-2.5 py-2.5 text-center inline-flex items-center dark:bg-neutral-950 dark:hover:bg-neutral-950 dark:focus:bg-neutral-950" type="button">Contenido <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg>
+                </button>
+
+                <!-- Dropdown menu -->
+                <div id="dropdownHover" class="z-10 hidden bg-white divide-y divide-black border rounded rounded-lg shadow w-44 dark:bg-neutral-950">
+                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+                        <li class="bg-neutral-950 p-2">
+                            <a href="./portada.html"
+                                class="block text-xl font-thin py-2 pl-3 pr-4 text-white hover:text-violet-400 rounded md:p-0 md:dark:text-white"
+                                aria-current="page">Álbum</a>
+                        </li>
+                        <li class="bg-neutral-950 p-2">
+                            <a href="./addAlbum.html"
+                                class="block py-2 text-xl font-thin pl-3 pr-4 text-white hover:text-violet-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:dark:hover:text-violet-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-viole-500 md:dark:hover:bg-transparent dark:border-gray-700">AddAlbum</a>
+                        </li>
+                        <li class="bg-neutral-950 p-2">
+                            <a href="./tours.html"
+                                class="block py-2 text-xl font-thin pl-3 pr-4 text-white hover:text-violet-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:dark:hover:text-violet-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Tickets</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- DROPDOW CUENTA -->
+                <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover2" data-dropdown-trigger="hover" class="text-violet-500 text-xl margin-cero bg-neutral-950 hover:text-violet-400 hover:bg-neutral-950 focus:ring-4 focus:outline-none focus:ring-red-400 font-medium rounded-lg text-base px-2.5 py-2.5 text-center inline-flex items-center dark:bg-neutral-950 dark:hover:bg-neutral-950 dark:focus:bg-neutral-950" type="button">Iniciar Sesión <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg>
+                </button>
+
+                <!-- Dropdown menu -->
+                <div id="dropdownHover2" class="z-10 hidden bg-white divide-y divide-black border rounded rounded-lg shadow w-44 dark:bg-neutral-950">
+                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+                        <!-- <li class="bg-neutral-950 p-2">
+                            <a href="./signin.html"
+                                class="block text-xl font-thin py-2 pl-3 pr-4 text-white hover:text-violet-400 rounded md:p-0 md:dark:text-white"
+                                aria-current="page">Iniciar sesión</a>
+                        </li> -->
+                        <li class="bg-neutral-950 p-2">
+                            <a href="./signup.html"
+                                class="block py-2 text-xl font-thin pl-3 pr-4 text-white hover:text-violet-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:dark:hover:text-violet-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-viole-500 md:dark:hover:bg-transparent dark:border-gray-700">Crear cuenta</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                    <li class="bg-neutral-950 mx-1">
+                        <a href="./index.html"
+                            class="block py-2 text-lg text-white pl-3 pr-4 hover:text-violet-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:dark:hover:text-violet-400 md:dark:hover:bg-transparent dark:border-gray-700">
+                            Intro</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        </div>
+
+
+    </nav>
+
+
+    <!--FORMULARIO PARA INICIAR SESIÓN-->
+    <div class="grid h-full place-items-center px-2 md:px-7 bg-neutral-950 mt-[90px] md:mt-[80px]">
+
+        <div class="mt-10 w-11/12 md:w-10/12 lg:w-10/12 xl:w-4/12 2xl:w-4/12 rounded-3xl pt-6 pb-6">
+
+            <div class="mb-8 md:mb-0">
+                <h1
+                    class="font-bold text-center md:text-start text-6xl md:text-5xl bg-gradient-to-r from-blue-600 to-violet-300 bg-clip-text text-transparent mb-2 md:mb-1">
+                    Iniciá Sesión</h1>
+                <h1 class="text-slate-300 text-2xl text-center md:text-start md:text-2xl font-bold">!Gracias por visitar
+                    mi proyecto!</h1>
+            </div>
+            <form id="formulario-login" method="POST" class="flex flex-col w-full">
+
+                <label class="text-white text-base mt-2" for="email">Email</label>
+                <input id="email" name="email"
+                    class="mt-1 bg-neutral-800 rounded-md p-1.5 text-white text-sm h-10 placeholder:text-sm focus-visible:outline-none"
+                    id="email" type="email" name="emailUsuario" placeholder="Ingresá una casilla de email" required>
+
+                <label class="text-white text-base mt-2" for="password" for="">Password</label>
+                <input id="contraseña" name="contraseña"
+                    class="mt-1 bg-neutral-800 rounded-md p-1.5 text-white text-sm h-10 placeholder:text-sm focus-visible:outline-none"
+                    id="password" type="password" name="claveUsuario" placeholder="Ingresá tu password" required>
+
+                <div class="flex justify-center items-center mt-6 mb-2 cursor-pointer">
+                    <button type="submit"
+                        class="cursor-pointer flex items-center justify-center w-full text-lg text-white bg-gradient-to-r from-blue-700 to-violet-500 p-1 h-10 rounded-full transition ease-in-out delay-25 hover:scale-105">Iniciar
+                        Sesión</button>
+                </div>
+
+                <div class="flex justify-center my-2">
+                    <h3 class="text-white text-lg">¿No tenés una cuenta?. Creá una <a
+                            class="text-violet-500 hover:text-violet-400 transition ease-in-out delay-25"
+                            href="/signup.html"><u>aquí!</u></a></h3>
+                </div>
+
+            </form>
+
+        </div>
+
+
+    </div>
+
+    <!--FOOTER-->   
+    <div class="flex w-full justify-center items-center p-5 mt-10 fixed bottom-0">
+        <p class="text-white text-lg">Curso Introductorio Fullstack - Plataforma 5 - Proyecto disco Agustin Trezza</p>
+        <img class="w-12 h-12 ms-5 rounded" src="./imagenes/p5logo.jpeg" alt="logo-p5">
+    </div>
+
+    <script>
+
+        const user = JSON.parse(localStorage.getItem('userInfo'))
+        if (user) {
+            document.getElementById('2').style.display = "block";
+            document.getElementById('3').textContent = '';
+            document.getElementById('4').style.display = "block";
+            document.getElementById('nombre-usuario').textContent = user.nombre;
+
+        } else {
+            document.getElementById('2').style.display = "none";
+            document.getElementById('3').textContent = 'Login'
+            document.getElementById('4').style.display = "none";
+        }
+
+        function cerrarSesion() {
+            console.log(user)
+            localStorage.removeItem('userInfo')
+            window.location.href = "../signin.html"
+        }
+
+        module.exports
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <script type="module" src="./scripts/signin.js"></script>
+</body>
+
+</html>
