@@ -14,7 +14,7 @@ function getInputValues() {
 
 // CREÁ EL USUARIO
 async function createUser(objectToSend) {
-  console.log(objectToSend);
+  // console.log(objectToSend);
   try {
     await axios.post("/users/crearusuario", objectToSend);
     swal({

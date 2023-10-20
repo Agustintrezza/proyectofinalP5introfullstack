@@ -2,7 +2,6 @@
 const formulario = document.getElementById("formulario-cancion");
 formulario.addEventListener("submit", function (e) {
   e.preventDefault();
-  console.log("entra");
   getInputValues();
 });
 
@@ -10,7 +9,7 @@ formulario.addEventListener("submit", function (e) {
 function getInputValues() {
   const valoresFormulario = new FormData(formulario);
   const objectToSend = Object.fromEntries(valoresFormulario);
-  console.log(objectToSend);
+  // console.log(objectToSend);
   return addCancion(objectToSend);
 }
 
@@ -19,8 +18,8 @@ async function addCancion(objectToSend) {
   try {
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
     const token = userInfo.token || null;
-    console.log(token);
-    console.log(objectToSend);
+    // console.log(token);
+    // console.log(objectToSend);
 
     if(objectToSend.duracion.length !== 5 ) {
       swal({
@@ -162,7 +161,7 @@ const id = document.getElementById("boton-eliminar");
 
 // ELIMINA UNA CANCION POR ID
 async function eliminarCancion(id) {
-  console.log("Elimina", id);
+  // console.log("Elimina", id);
 
   if(id.length != 24) {
     swal({
@@ -191,7 +190,7 @@ async function eliminarCancion(id) {
           location.reload();
         }, 2000);
   
-        console.log(data);
+        // console.log(data);
       } catch (error) {
         const userInfo = JSON.parse(localStorage.getItem("userInfo"));
         if (!userInfo) {

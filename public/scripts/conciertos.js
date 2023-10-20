@@ -2,7 +2,6 @@
 const formulario = document.getElementById("formulario-tickets");
 formulario.addEventListener("submit", function (e) {
   e.preventDefault();
-  console.log("entra");
   getInputValues2();
 });
 
@@ -10,15 +9,14 @@ formulario.addEventListener("submit", function (e) {
 function getInputValues2() {
   const valoresFormulario = new FormData(formulario);
   const objectToSend = Object.fromEntries(valoresFormulario);
-  console.log(objectToSend);
+  // console.log(objectToSend);
   return addConcierto2(objectToSend);
 }
 
 // EDITÂ UN LA CANTIDAD DE CUPO DEL CONCIERTO
 async function addConcierto2(objectToSend) {
-  console.log(objectToSend.id);
+  // console.log(objectToSend.id);
   const hola = objectToSend.id;
-  console.log("Hola", hola);
 
   if(hola.length != 24) {
     swal({
@@ -32,7 +30,7 @@ async function addConcierto2(objectToSend) {
       try {
         const userInfo = JSON.parse(localStorage.getItem("userInfo"));
         const token = userInfo.token || null;
-        console.log(token);
+        // console.log(token);
     
         if (userInfo) {
           await axios.put(`/conciertos/actualizar-cupo/${hola}`, objectToSend, {
@@ -106,10 +104,10 @@ const mostrarData = async () => {
       });
 
       if (ticketsdisponibles === 0) {
-        console.log("hay uno");
+        // console.log("hay uno");
         var ticketsdisponiblesFiltrados = "NO QUEDAN TICKETS DISPONIBLES";
       } else {
-        console.log("no hay ninguno");
+        // console.log("no hay ninguno");
         var ticketsdisponiblesFiltrados = ticketsdisponibles;
       }
 
@@ -160,13 +158,13 @@ formulario2.addEventListener("submit", function (e) {
 function getInputValues() {
   const valoresFormulario = new FormData(formulario2);
   const objectToSend = Object.fromEntries(valoresFormulario);
-  console.log(objectToSend);
+  // console.log(objectToSend);
   return addConcierto(objectToSend);
 }
 
 // DESCUENTA LA CANTIDAD DE TICKETS DEL CONCIERTO
 async function addConcierto(objectToSend) {
-  console.log(objectToSend.id);
+  // console.log(objectToSend.id);
   const id = objectToSend.id;
   
   if(id.length != 24) {
@@ -183,7 +181,7 @@ async function addConcierto(objectToSend) {
     try {
       const userInfo = JSON.parse(localStorage.getItem("userInfo"));
       const token = userInfo.token || null;
-      console.log(token);
+      // console.log(token);
   
       if (userInfo) {
         const data = await axios.put(`/conciertos/descontarcantidad/${id}`, objectToSend);
@@ -231,4 +229,4 @@ async function addConcierto(objectToSend) {
 }
 
 const id = document.getElementById("boton-eliminar");
-console.log(id);
+// console.log(id);

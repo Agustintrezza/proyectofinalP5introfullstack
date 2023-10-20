@@ -2,7 +2,7 @@
 async function obtenerAlbumes(req, res) {
   try {
     const data = await axios.get("/albums/vertodoslosalbumes");
-    console.log(data.data.albums);
+    // console.log(data.data.albums);
     return data.data.albums;
   } catch (error) {
     console.log("entra en el error");
@@ -66,7 +66,7 @@ async function addAlbum(objectToSend) {
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
     const token = userInfo.token || null;
     // console.log(token);
-    console.log(objectToSend.descripcion);
+    // console.log(objectToSend.descripcion);
 
     if (userInfo) {
       if(objectToSend.descripcion.length < 5 || objectToSend.descripcion.length > 200) {
