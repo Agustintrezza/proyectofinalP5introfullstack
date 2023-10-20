@@ -72,7 +72,7 @@ async function addAlbum(objectToSend) {
       if(objectToSend.descripcion.length < 5 || objectToSend.descripcion.length > 200) {
         swal({
           title: "LA DESCRIPCIÓN DEBE CONTENER ENTRE 5 Y 200 CARACTERES",
-          text: "Para crear albumes es necesario iniciar sesión.",
+          text: "Para crear álbums es necesario iniciar sesión.",
           icon: "warning",
           confirmButtonText: "Ok",
         });
@@ -84,8 +84,8 @@ async function addAlbum(objectToSend) {
           },
         });
         swal({
-          title: "SE AGREGÓ LA CANCIÓN AL ALBUM",
-          text: "Se agrego correctamente la canción.",
+          title: "SE AGREGÓ EL ÁLBUM EXITOSAMENTE",
+          text: "Se agrego correctamente el álbum.",
           icon: "success",
           confirmButtonText: "Ok",
         });
@@ -100,7 +100,7 @@ async function addAlbum(objectToSend) {
     if (!userInfo) {
       swal({
         title: "DEBES INICIAR SESIÓN",
-        text: "Para crear albumes es necesario iniciar sesión.",
+        text: "Para crear álbums es necesario iniciar sesión.",
         icon: "warning",
         confirmButtonText: "Ok",
       });
