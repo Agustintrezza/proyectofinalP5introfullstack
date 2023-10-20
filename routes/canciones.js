@@ -40,13 +40,13 @@ router.delete("/eliminarcancion/:id", isAuth, async (req, res) => {
       const cancionEliminada = await cancionesModel.findByIdAndDelete(
         req.params.id
       );
-      res.status(204).send("La canción se eliminó correctamente");
+      res.status(200).send("La canción se eliminó correctamente");
     } else {
       console.log("no hubo match");
       res.status(500).send({ message: "Ese id no corresponde a una canción" });
     }
   } catch (error) {
-    res.status(200).send("No se encontro la canción que se quiere elminar.");
+    res.status(500).send("No se encontro la canción que se quiere elminar.");
     console.log(error);
   }
 });
