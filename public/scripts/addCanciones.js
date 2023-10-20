@@ -115,6 +115,7 @@ const mostrarData = async () => {
                       </div>
                       <div>
                         <p class="text-white text-xl">${titulo}</p>
+                        <p class="text-white visible md:hidden">${duracion}</p>
                         <div class="text-neutral-300">${_id}</div>
                       </div>
                   </div>
