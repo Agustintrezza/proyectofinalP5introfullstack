@@ -15,12 +15,12 @@
     <!-- HEADER -->
     <nav class="bg-neutral-950 fixed w-full z-20 top-0 left-0 border-b border-gray-600 dark:border-gray-800">
         <div class=" w-full flex flex-wrap items-center justify-between mx-auto px-4 py-1 md:py-3">
-            <a href="https://flowbite.com/" class="flex items-center">
+            <a href="./index.html" class="flex items-center">
                 <img class="logo-plataforma5 w-10 h-10 rounded ms-0 lg:ms-3" src="./imagenes/p5logo.jpeg" alt="logo-p5">
                 <div class="flex items-center altura">
                     <div class="flex flex-col ms-1">
                         <h2 class="font-thin text-white text-xl lg:text-2xl m-0 ">Proyecto Disco</h2>
-                        <h2 class="text-violet-500 text-ms">Agustin Trezza</h2>
+                        <h2 class="text-violet-500 text-ms mt-[-6px]">Agustin Trezza</h2>
                     </div>
                 </div>
             </a>
@@ -28,8 +28,8 @@
             <div class=" md:order-2 items-center">
                 <div id="2" class="flex clasee">
                     <div class="flex items-center clasee">
-                        <p class="text-white text-2xl me-4" id="nombre-usuario"></p>
-                        <img src="./imagenes/perrito.png" class="w-11 h-11 me-4 rounded-full">
+                        <p class="text-white text-2xl me-3" id="nombre-usuario"></p>
+                        <img src="./imagenes/perrito.png" class="w-11 h-11 me-2 rounded-full">
                         <button onclick=cerrarSesion() class="bg-red-500 rounded cursor-pointer p-2 text-white">Cerrar Sesión</button>
                     </div>
                     <div>
@@ -73,7 +73,7 @@
                 
 
                 <!-- DROPDOWN CONTENIDO -->
-                <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-violet-500 text-xl bg-neutral-950 hover:text-violet-400 hover:bg-neutral-950 focus:ring-4 focus:outline-none focus:ring-red-400 font-medium rounded-lg text-base px-2.5 py-2.5 text-center inline-flex items-center dark:bg-neutral-950 dark:hover:bg-neutral-950 dark:focus:bg-neutral-950" type="button">Tickets <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-violet-500 text-xl bg-neutral-950 hover:text-violet-400 hover:bg-neutral-950 focus:ring-4 focus:outline-none focus:ring-red-400 font-medium rounded-lg text-base px-1.5 py-2.5 text-center inline-flex items-center dark:bg-neutral-950 dark:hover:bg-neutral-950 dark:focus:bg-neutral-950" type="button">Tickets <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                 </svg>
                 </button>
@@ -98,7 +98,7 @@
                 </div>
 
                 <!-- DROPDOW CUENTA -->
-                <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover2" data-dropdown-trigger="hover" class="text-white margin-cero bg-neutral-950 hover:text-violet-400 hover:bg-neutral-950 focus:ring-4 focus:outline-none focus:ring-red-400 font-medium rounded-lg text-base px-2.5 py-2.5 text-center inline-flex items-center dark:bg-neutral-950 dark:hover:bg-neutral-950 dark:focus:bg-neutral-950" type="button">Cuenta <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover2" data-dropdown-trigger="hover" class="text-white margin-cero bg-neutral-950 hover:text-violet-400 hover:bg-neutral-950 focus:ring-4 focus:outline-none focus:ring-red-400 font-medium rounded-lg text-base px-1.5 py-2.5 text-center inline-flex items-center dark:bg-neutral-950 dark:hover:bg-neutral-950 dark:focus:bg-neutral-950" type="button">Cuenta <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                 </svg>
                 </button>
@@ -316,29 +316,29 @@
             <section class="bg-neutral-950 h-screen xl:col-span-4 rounded-lg">
 
 
-                <div class="flex flex-col md:flex-row justify-between gap-7 items-start">
+                <div class="grid-custom-botones-concierto gap-4">
                     <div class="">
-                        <h1 class="font-bold text-center bg-gradient-to-r from-blue-700 to-violet-500 bg-clip-text text-transparent md:text-start text-6xl w-full mb-3 md:mb-0">Tickets disponibles para conciertos.</h1>
+                        <h1 class="font-bold text-center bg-gradient-to-r from-blue-700 to-violet-500 bg-clip-text text-transparent md:text-start text-5xl md:text-6xl w-full mb-3 md:mb-0">Tickets disponibles para conciertos.</h1>
                         <h1 class="text-white p-2 text-2xl md:text-lg text-center md:text-start">Seleccióna el ID del concierto, modificá los cupos o adquirí tus tickets.
                             <small></small></h1>
                     </div>
 
-                    <div class="md:me-10 flex flex-col items-start gap-5">
-                        <div class="flex gap-4">
-                            <div>
+                    <div class="w-full flex justify-center flex flex-col p-4 items-start gap-4">
+                        <div class="flex justify-center gap-4 w-full">
+                            <div class="">
                                 <button id="1" data-modal-target="staticModal" data-modal-toggle="staticModal"
-                                    class="boton-comprar-tickets px-1 py-2 md:px-8 md:py-2 font-bold text-xl md:text-lg text-violet-900 hover:white text-sm bg-yellow-400 rounded transition ease-in-out delay-25 hover:scale-105">¡MODIFICAR
+                                    class="boton-comprar-tickets px-1 py-2 md:px-6 md:py-2 font-bold text-xl md:text-lg text-violet-900 hover:white text-sm bg-yellow-400 rounded transition ease-in-out delay-25 hover:scale-105">¡MODIFICAR
                                     CUPOS!</button>
                             </div>
                             <div>
                                 <button id="2" data-modal-target="staticModal1" data-modal-toggle="staticModal1"
-                                    class="boton-comprar-tickets px-1 py-2 md:px-8 md:py-2 font-bold text-xl md:text-lg text-violet-900 hover:white text-sm bg-yellow-400 rounded transition ease-in-out delay-25 hover:scale-105">¡COMPRAR
+                                    class="boton-comprar-tickets px-1 py-2 md:px-6 md:py-2 font-bold text-xl md:text-lg text-violet-900 hover:white text-sm bg-yellow-400 rounded transition ease-in-out delay-25 hover:scale-105">¡COMPRAR
                                     TICKETS!</button>
                                 <p id="alerta-sesion" class="text-white"></p>
                             </div>
                         </div>
-                        <div>
-                            <p id="alerta-sesion1" class="text-red-500">(Es necesario iniciar sesión)</p>
+                        <div class="w-full">
+                            <p id="alerta-sesion1" class="text-center text-xl md:text-start text-red-500">(Es necesario iniciar sesión)</p>
                         </div>
                     </div>
                 </div>
@@ -353,7 +353,7 @@
 
                     <div id="staticModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
                         class=" fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                        <div class="relative w-4/12">
+                        <div class="relative">
                             <!-- Modal content -->
                             <div class="relative bg-neutral-800 rounded-lg shadow dark:bg-neutral-800">
                                 <!-- Modal header -->
@@ -402,7 +402,7 @@
                     <div id="staticModal1" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
                         class=" fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
 
-                        <div class="relative w-4/12">
+                        <div class="relative">
 
                             <div class="relative bg-neutral-800 rounded-lg shadow dark:bg-neutral-800">
 
@@ -453,14 +453,9 @@
 
     </section>
     </div>
-    <!--FOOTER-->
-    <!-- <div class="hidden lg:block">
-        <div class="mt-16 w-full text-center flex w-full justify-center items-center p-5 me-40">
-            <p class="text-white text-xl me-5">Curso Introductorio Fullstack - Proyecto disco Agustin Trezza</p>
-            <img class="w-12 h-12 ms-5 rounded me-30" src="./imagenes/p5logo.jpeg" alt="logo-p5">
-        </div>
-    </div> -->
 </div>
+
+    <!-- JAVASCRIPT COMPLEMENTARIO DE LA HOJA CON EVENTOS EN LA VISTA Y LA FUNCION PARA CERRAR SESIÓN-->
 
     <script>
 
@@ -475,7 +470,7 @@
 
         } else {
             document.getElementById('2').style.display = "none";
-            document.getElementById('3').textContent = 'Login'
+            document.getElementById('3').textContent = 'Iniciar Sesión'
             document.getElementById('4').style.display = "none";
         }
 
