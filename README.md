@@ -11,6 +11,9 @@ El mismo está enfocado en una aplicación musical, en donde el usuario podrá, 
 
 **El usuario podrá y deberá, crear una cuenta e iniciar sesión en ella para poder: ver, subir y eliminar sus álbums musicales, agregar y eliminar canciones a un álbum, ver fechas para conciertos, modificar el cupo de los mismos y adquirir tickets.**
 
+ENLACE AL PROYECTO
+[https://proyectoagustintrezzap5introfullstack.onrender.com/]
+
 ## PASOS PARA EJECUTAR EL PROYECTO
 
 * 1 -  Descargar la carpeta del repositorio de Github aquí ().
@@ -26,7 +29,7 @@ EL PROYECTOS PODRÍAMOS SEPARARLO EN:  **FRONTEND, BACKEND, GENERALES Y DEPLOY**
 
 ### **FRONTEND:**(5 landings: /, /addalbum, /tours, /signin, /signup).
 
-_**/ (Home del álmun)**_ : Se armo y dió estilos al contenido del álbum "Bocanada", con HTML, Talwind, Javascript y CSS. Está parte del sitio muestra las canciones del álbum, permite sólo si el usuario inicia sesión, agregar y eliminar canciones al álbum a través de formularios con validaciones.
+_**/portada (Home del álbun)**_ : Se armo y dió estilos al contenido del álbum "Bocanada", con HTML, Talwind, Javascript y CSS. Está parte del sitio muestra las canciones del álbum, permite sólo si el usuario inicia sesión, agregar y eliminar canciones al álbum a través de formularios con validaciones.
 
 Los archivos de esta sección del sitio son: **public/index.html y public/scripts/addCanciones.js**
 
