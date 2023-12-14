@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
+    <link href="./styles.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+    <title>Home - API Subscription</title>
+</head>
+
+<body class="bg-neutral-950 border-box ocultar">
+
+
+    <!-- HEADER -->
+    <nav class="fixed w-full z-20 top-0 left-0 background-nav-home">
+        <div class=" w-full flex flex-wrap items-center justify-between mx-auto px-4 py-2 md:py-3">
+            <a href="./index.html" class="flex items-center">
+                <!-- <img class="logo-plataforma5 w-10 h-10 rounded ms-0 lg:ms-3" src="./imagenes/p5logo.jpeg" alt="logo-p5"> -->
+                <div class="flex items-center altura">
+                    <div class="flex flex-col ms-1">
+                        <h2 class="font-base clase-logo-custom text-xl lg:text-3xl m-0 text-blue-300 ">API - Subscription</h2>
+                        <!-- <h2 class="text-violet-500 text-ms mt-[-6px]">Agustin Trezza</h2> -->
+                    </div>
+                </div>
+            </a>
+
+            <div class=" md:order-2 items-center">
+                <div id="2" class="flex clasee">
+                    <div class="flex items-center gap-2 clasee">
+                        <!-- <p class="text-white text-2xl me-2" id="nombre-usuario"></p> -->
+                        <svg class="text-white w-2.5 h-2.5 ml-2.5" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="m1 1 4 4 4-4" />
+                                </svg>
+                            <button id="nombre-usuario" data-dropdown-toggle="dropdownHover2" data-dropdown-trigger="hover"
+                                class="text-white margin-cero bg-neutral-950 hover:text-violet-400 hover:bg-neutral-950 focus:ring-4 focus:outline-none focus:ring-red-400 font-medium rounded-lg text-xl px-1.5 py-2.5 text-center inline-flex items-center dark:bg-neutral-950 dark:hover:bg-neutral-950 dark:focus:bg-neutral-950"
+                                type="button">
+                            </button>
+
+                            <!-- Dropdown menu -->
+                            <div id="dropdownHover2"
+                                class="z-10 hidden bg-neutral-950 divide-y divide-black rounded rounded-lg shadow w-44 dark:bg-neutral-900">
+                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="nombre-usuario">
+                                    <li class="bg-neutral-950 p-2">
+                                        <a href="./account.html"
+                                            class="block text-xl font-thin py-2 pl-3 pr-4 text-white hover:text-violet-400 rounded md:p-0 md:dark:text-white"
+                                            aria-current="page">My Account</a>
+                                    </li>
+                                    <li class="bg-neutral-950 p-2">
+                                        <a href="./credentials.html"
+                                            class="block py-2 text-xl font-thin pl-3 pr-4 text-white hover:text-violet-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:dark:hover:text-violet-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-viole-500 md:dark:hover:bg-transparent dark:border-gray-700">API Credentials</a>
+                                    </li>
+                                    <li class="bg-neutral-950 p-2">
+                                        <a href="./test.html"
+                                            class="block py-2 text-xl font-thin pl-3 pr-4 text-white hover:text-violet-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:dark:hover:text-violet-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-viole-500 md:dark:hover:bg-transparent dark:border-gray-700">Test API</a>
+                                    </li>
+                                    <!--<li class="bg-neutral-950 p-2">
+                                        <a href="./signup.html"
+                                            class="block py-2 text-xl font-thin pl-3 pr-4 text-white hover:text-violet-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:dark:hover:text-violet-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-viole-500 md:dark:hover:bg-transparent dark:border-gray-700">Support</a>
+                                    </li> -->
+
+                                </ul>
+                            </div>
+                        <img src="./assets/imagenes/jirafita.jpeg" class="w-11 h-11 me-3 rounded-full">
+                        <button onclick=cerrarSesion() class="color-buton-cerrar-sesion rounded cursor-pointer p-2 text-white">Log Out</button>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+
+
+                <div class="flexi p-2 md:p-0">
+                    <div>
+                        <a href="./signin.html" id="3"
+                            class="text-violet-400 hover:text-violet-600 font-thin text-xl md:text-2xl"></a>
+                    </div>
+
+                    <div id="4" class="">
+                        <button onclick=cerrarSesion()
+                            class="md:hidden bg-red-500 rounded cursor-pointer p-2 text-white">Log Out</button>
+                    </div>
+
+                    <div>
+                        <button data-collapse-toggle="navbar-sticky" type="button"
+                            class="ms-2 inline-flex items-center p-0 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                            aria-controls="navbar-sticky" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 17 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                            </svg>
+                        </button>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+            <!-- HEADER REDIRECCIONES -->
+
+            
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+
+                <ul
+                    class="flex items-center gap-1 flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:flex-row space-x-3 lg:space-x-8 md:mt-0 md:border-0 dark:border-gray-700">
+
+                    <li class="p-1 background-ul">
+                        <a href="./index.html"
+                            class="block text-xl font-thin py-2 pl-3 pr-4 text-white hover:text-violet-400 rounded md:p-0 md:dark:text-violet-400"
+                            aria-current="page">Home</a>
+                    </li>
+
+                    <li class="background-ul p-1">
+                        <a href="./pricing.html"
+                            class="block text-xl font-thin py-2 pl-3 pr-4 text-white hover:text-violet-400 rounded md:p-0 md:dark:text-white"
+                            aria-current="page">Pricing</a>
+                    </li>
+                    
+                    <svg class="text-white w-2.5 h-2.5 ml-2.5" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="m1 1 4 4 4-4" />
+                                </svg>
+                            <button data-dropdown-toggle="dropdownHover3" data-dropdown-trigger="hover"
+                                class="text-white margin-cero bg-neutral-950 hover:text-violet-400 hover:bg-neutral-950 focus:ring-4 focus:outline-none focus:ring-red-400 font-medium rounded-lg text-xl px-1.5 py-2.5 text-center inline-flex items-center dark:bg-neutral-950 dark:hover:bg-neutral-950 dark:focus:bg-neutral-950"
+                                type="button">Sourcing
+                            </button>
+
+                            <!-- Dropdown menu -->
+                            <div id="dropdownHover3"
+                                class="z-10 width-dropdown hidden bg-neutral-900 divide-y divide-black rounded rounded-lg shadow w-44 dark:bg-neutral-900">
+                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="nombre-usuario">
+                                    <li class="bg-neutral-950 p-2">
+                                        <a href="./account.html"
+                                            class="block text-xl font-thin py-2 pl-3 pr-4 text-white hover:text-violet-400 rounded md:p-0 md:dark:text-white"
+                                            aria-current="page">API DOCUMENTATION</a>
+                                    </li>
+                                    
+                                    <!-- <li class="bg-neutral-950 p-2">
+                                        <a href="./signup.html"
+                                            class="block py-2 text-xl font-thin pl-3 pr-4 text-white hover:text-violet-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:dark:hover:text-violet-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-viole-500 md:dark:hover:bg-transparent dark:border-gray-700">Our Online Course</a>
+                                    </li> -->
+                                    <li class="bg-neutral-950 p-2">
+                                        <a href="./signup.html"
+                                            class="block py-2 text-xl font-thin pl-3 pr-4 text-white hover:text-violet-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:dark:hover:text-violet-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-viole-500 md:dark:hover:bg-transparent dark:border-gray-700">Build your own API - curse</a>
+                                    </li>
+                                    <li class="bg-neutral-950 p-2">
+                                        <a href="./test.html"
+                                            class="block py-2 text-xl font-thin pl-3 pr-4 text-white hover:text-violet-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:dark:hover:text-violet-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-viole-500 md:dark:hover:bg-transparent dark:border-gray-700">About Us</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+
+                    <li class="background-ul p-1" id="ruta-login">
+                        <a href="./signin.html"
+                            class="block text-xl font-thin py-2 pl-3 pr-4 text-white hover:text-violet-400 rounded md:p-0 md:dark:text-white"
+                            aria-current="page">Log In</a>
+                    </li>
+
+                    <li class="background-ul p-1" id="ruta-registro">
+                        <a href="./signup.html"
+                            class="block text-xl font-thin py-2 pl-3 pr-4 text-white hover:text-violet-400 rounded md:p-0 md:dark:text-white"
+                            aria-current="page">Register</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        </div>
+
+
+    </nav>
+
+    <button onclick="copiarAlPortapapeles('${apiKey}')" class="ml-2 bg-blue-500 text-white px-2 py-1 rounded">Copy</button>
+
+    <div class="contenedor-data-usuario">
+        <h1 class="titulo-data-usuario">Your Data Account</h1>    
+        
+        <div class="text-white" id="display-data"></div>
+    </div>
+</body>
+</html>
+
+
+<script>
+
+    const user = JSON.parse(localStorage.getItem('userInfo'))
+    if (user) {
+        document.getElementById('2').style.display = "block";
+        document.getElementById('3').textContent = '';
+        document.getElementById('4').style.display = "block";
+        document.getElementById('nombre-usuario').textContent = user.nombre;
+        document.getElementById('ruta-login').style.display = "none";
+        document.getElementById('ruta-registro').style.display = "none";
+
+    } else {
+        document.getElementById('2').style.display = "none";
+        document.getElementById('3').textContent = 'LogIn'
+        document.getElementById('4').style.display = "none";
+    }
+
+    function cerrarSesion() {
+        console.log(user)
+        localStorage.removeItem('userInfo')
+        window.location.href = "../signin.html"
+    }
+
+    function copiarCodigo() {
+      var codigoElement = document.getElementById('codigo');
+      var codigoTexto = codigoElement.textContent;
+
+      navigator.clipboard.writeText(codigoTexto)
+        .then(function() {
+          alert('Código copiado con éxito!');
+        })
+        .catch(function(err) {
+          console.error('Error al copiar el código: ', err);
+        });
+    }
+
+
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+<script type="module" src="./scripts/account.js"></script>
+</body>
+
+</html>

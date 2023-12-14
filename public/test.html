@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
+    <link href="./styles.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./assets/imagenes/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jsonview/2.4.0/jquery.jsonview.min.css" />
+    <title>Login - API Subscription</title>
+    <style>
+        .json-response {
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #383838;
+          border: 1px solid #d6d8db;
+          color: white;
+          border-radius: 5px;
+          overflow: auto;
+        }
+        .json-response pre {
+          white-space: pre-wrap;
+          word-break: break-all;
+        }
+      </style>
+</head>
+
+<body class="bg-neutral-950 border-box ocultar">
+
+    <!-- HEADER -->
+    <nav class="fixed w-full z-20 top-0 left-0 background-nav-home">
+        <div class=" w-full flex flex-wrap items-center justify-between mx-auto px-4 py-2 md:py-3">
+            <a href="./index.html" class="flex items-center">
+                <!-- <img class="logo-plataforma5 w-10 h-10 rounded ms-0 lg:ms-3" src="./imagenes/p5logo.jpeg" alt="logo-p5"> -->
+                <div class="flex items-center altura">
+                    <div class="flex flex-col ms-1">
+                        <h2 class="font-base clase-logo-custom text-xl lg:text-3xl m-0 text-blue-300 ">API - Subscription</h2>
+                        <!-- <h2 class="text-violet-500 text-ms mt-[-6px]">Agustin Trezza</h2> -->
+                    </div>
+                </div>
+            </a>
+
+            <div class=" md:order-2 items-center">
+                <div id="2" class="flex clasee">
+                    <div class="flex items-center gap-2 clasee">
+                        <!-- <p class="text-white text-2xl me-2" id="nombre-usuario"></p> -->
+                        <svg class="text-white w-2.5 h-2.5 ml-2.5" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="m1 1 4 4 4-4" />
+                                </svg>
+                            <button id="nombre-usuario" data-dropdown-toggle="dropdownHover2" data-dropdown-trigger="hover"
+                                class="text-white margin-cero bg-neutral-950 hover:text-violet-400 hover:bg-neutral-950 focus:ring-4 focus:outline-none focus:ring-red-400 font-medium rounded-lg text-xl px-1.5 py-2.5 text-center inline-flex items-center dark:bg-neutral-950 dark:hover:bg-neutral-950 dark:focus:bg-neutral-950"
+                                type="button">
+                            </button>
+
+                            <!-- Dropdown menu -->
+                            <div id="dropdownHover2"
+                                class="z-10 hidden bg-neutral-950 divide-y divide-black rounded rounded-lg shadow w-44 dark:bg-neutral-900">
+                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="nombre-usuario">
+                                    <li class="bg-neutral-950 p-2">
+                                        <a href="./account.html"
+                                            class="block text-xl font-thin py-2 pl-3 pr-4 text-white hover:text-violet-400 rounded md:p-0 md:dark:text-white"
+                                            aria-current="page">My Account</a>
+                                    </li>
+                                    <li class="bg-neutral-950 p-2">
+                                        <a href="./credentials.html"
+                                            class="block py-2 text-xl font-thin pl-3 pr-4 text-white hover:text-violet-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:dark:hover:text-violet-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-viole-500 md:dark:hover:bg-transparent dark:border-gray-700">API Credentials</a>
+                                    </li>
+                                    <li class="bg-neutral-950 p-2">
+                                        <a href="./test.html"
+                                            class="block py-2 text-xl font-thin pl-3 pr-4 text-white hover:text-violet-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:dark:hover:text-violet-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-viole-500 md:dark:hover:bg-transparent dark:border-gray-700">Test API</a>
+                                    </li>
+                                    <!--<li class="bg-neutral-950 p-2">
+                                        <a href="./signup.html"
+                                            class="block py-2 text-xl font-thin pl-3 pr-4 text-white hover:text-violet-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:dark:hover:text-violet-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-viole-500 md:dark:hover:bg-transparent dark:border-gray-700">Support</a>
+                                    </li> -->
+
+                                </ul>
+                            </div>
+                        <img src="./assets/imagenes/jirafita.jpeg" class="w-11 h-11 me-3 rounded-full">
+                        <button onclick=cerrarSesion() class="color-buton-cerrar-sesion rounded cursor-pointer p-2 text-white">Log Out</button>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+
+
+                <div class="flexi p-2 md:p-0">
+                    <div>
+                        <a href="./signin.html" id="3"
+                            class="text-violet-400 hover:text-violet-600 font-thin text-xl md:text-2xl"></a>
+                    </div>
+
+                    <div id="4" class="">
+                        <button onclick=cerrarSesion()
+                            class="md:hidden bg-red-500 rounded cursor-pointer p-2 text-white">Log Out</button>
+                    </div>
+
+                    <div>
+                        <button data-collapse-toggle="navbar-sticky" type="button"
+                            class="ms-2 inline-flex items-center p-0 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                            aria-controls="navbar-sticky" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 17 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                            </svg>
+                        </button>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+            <!-- HEADER REDIRECCIONES -->
+
+            
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+
+                <ul
+                    class="flex items-center gap-1 flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:flex-row space-x-3 lg:space-x-8 md:mt-0 md:border-0 dark:border-gray-700">
+
+                    <li class="p-1 background-ul">
+                        <a href="./index.html"
+                            class="block text-xl font-thin py-2 pl-3 pr-4 text-white hover:text-violet-400 rounded md:p-0 md:dark:text-violet-400"
+                            aria-current="page">Home</a>
+                    </li>
+
+                    <li class="background-ul p-1">
+                        <a href="./pricing.html"
+                            class="block text-xl font-thin py-2 pl-3 pr-4 text-white hover:text-violet-400 rounded md:p-0 md:dark:text-white"
+                            aria-current="page">Pricing</a>
+                    </li>
+                    
+                    <svg class="text-white w-2.5 h-2.5 ml-2.5" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="m1 1 4 4 4-4" />
+                                </svg>
+                            <button data-dropdown-toggle="dropdownHover3" data-dropdown-trigger="hover"
+                                class="text-white margin-cero bg-neutral-950 hover:text-violet-400 hover:bg-neutral-950 focus:ring-4 focus:outline-none focus:ring-red-400 font-medium rounded-lg text-xl px-1.5 py-2.5 text-center inline-flex items-center dark:bg-neutral-950 dark:hover:bg-neutral-950 dark:focus:bg-neutral-950"
+                                type="button">Sourcing
+                            </button>
+
+                            <!-- Dropdown menu -->
+                            <div id="dropdownHover3"
+                                class="z-10 width-dropdown hidden bg-neutral-900 divide-y divide-black rounded rounded-lg shadow w-44 dark:bg-neutral-900">
+                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="nombre-usuario">
+                                    <li class="bg-neutral-950 p-2">
+                                        <a href="./account.html"
+                                            class="block text-xl font-thin py-2 pl-3 pr-4 text-white hover:text-violet-400 rounded md:p-0 md:dark:text-white"
+                                            aria-current="page">API DOCUMENTATION</a>
+                                    </li>
+                                    
+                                    <!-- <li class="bg-neutral-950 p-2">
+                                        <a href="./signup.html"
+                                            class="block py-2 text-xl font-thin pl-3 pr-4 text-white hover:text-violet-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:dark:hover:text-violet-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-viole-500 md:dark:hover:bg-transparent dark:border-gray-700">Our Online Course</a>
+                                    </li> -->
+                                    <li class="bg-neutral-950 p-2">
+                                        <a href="./signup.html"
+                                            class="block py-2 text-xl font-thin pl-3 pr-4 text-white hover:text-violet-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:dark:hover:text-violet-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-viole-500 md:dark:hover:bg-transparent dark:border-gray-700">Build your own API - curse</a>
+                                    </li>
+                                    <li class="bg-neutral-950 p-2">
+                                        <a href="./test.html"
+                                            class="block py-2 text-xl font-thin pl-3 pr-4 text-white hover:text-violet-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:dark:hover:text-violet-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-viole-500 md:dark:hover:bg-transparent dark:border-gray-700">About Us</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+
+                    <li class="background-ul p-1" id="ruta-login">
+                        <a href="./signin.html"
+                            class="block text-xl font-thin py-2 pl-3 pr-4 text-white hover:text-violet-400 rounded md:p-0 md:dark:text-white"
+                            aria-current="page">Log In</a>
+                    </li>
+
+                    <li class="background-ul p-1" id="ruta-registro">
+                        <a href="./signup.html"
+                            class="block text-xl font-thin py-2 pl-3 pr-4 text-white hover:text-violet-400 rounded md:p-0 md:dark:text-white"
+                            aria-current="page">Register</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        </div>
+
+
+    </nav>
+
+    <div class="contenedor-data-usuario">
+        <h1 class="titulo-data-usuario">¡Enter your KEY and select one endpoint!</h1> 
+
+
+        <div class="custom-grid">
+            <div>
+                <div class="form-container">
+                    <div class="my-2 flex flex-col">
+        
+                        <label class="text-white text-base mt-2"  for="apiKeyInput">Enter your API KEY from "Credentials"</label>
+                        <input id="apiKeyInput" name="apiKeyInput"
+                            class="mt-1 bg-neutral-800 rounded-md 3 text-white text-sm h-10 p-2 placeholder:text-sm focus-visible:outline-none"
+                            type="text" placeholder="Enter your API KEY" required>       
+                    </div>
+                    <div class="">
+                        <label class="text-white text-base" for="endpointSelect" for="">Select one from our endpoints</label>
+                            <select name="endpointSelect" id="endpointSelect"
+                                class="mt-2 bg-neutral-800 w-full rounded-md text-white text-sm p-2 h-10 placeholder:text-sm focus-visible:outline-none"
+                                required>
+                                <option value="" disabled selected>Select enpoint</option>
+                                <option value="http://localhost:4242/users/negocio">users/negocio</option>
+                                <option value="http://localhost:4242/users/negocio-premium">users/negocio-premium</option>
+                                <option value="http://localhost:4242/planets/pro">planets/pro</option>
+                                <option value="http://localhost:4242/planets/premium">planets/premium</option>
+                                <option value="http://localhost:4242/composers/pro">composers/pro</option>
+                                <option value="http://localhost:4242/composers/premium">composers/premium</option>
+                                <option value="http://localhost:4242/cocktails/pro">cocktails/pro</option>
+                                <option value="http://localhost:4242/cocktails/premium">cocktails/premium</option>
+                                <option value="http://localhost:4242/yoga/pro">yoga/pro</option>
+                                <option value="http://localhost:4242/yoga/premium">yoga/premium</option>
+                                <option value="http://localhost:4242/recycling/pro">recycling/pro</option>
+                                <option value="http://localhost:4242/recycling/premium">recycling/premium</option>
+                            </select>
+                        <!-- <select id="endpointSelect" class="input-field">
+                            <option value="http://localhost:4242/users/negocio">/users/negocio</option>
+                            <option value="http://localhost:4242/users/negocio-premium">/users/negocio-premium</option>
+                            <option value="/endpoint3">Endpoint 3</option>
+                            <option value="/endpoint4">Endpoint 4</option>
+                        </select> -->
+                    </div>
+                    <div class="mt-4 ms-2">
+                        <button onclick="makeRequest()" class="btn-make-request text-white font-medium text-lg bg-blue-500 rounded py-2 px-4">Make Request</button>
+                    </div>  
+                </div>
+            </div>
+
+            <div class="text-white p-4" id="display-data">
+                <div id="loading-spinner" class="hidden">
+                    <div role="status" class="flex justify-center items-center mt-14">
+                        <svg aria-hidden="true" class="w-16 h-16 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+                            <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+                        </svg>
+                        <span class="sr-only">Loading...</span>
+                    </div>
+            </div>
+            </div>
+        </div>
+        
+
+        
+        
+
+    </div>
+
+ 
+
+    <!--FOOTER-->
+    <!-- <div class="grid-custom-footer mt-5 mb-6 fixed bottom-0">
+        <div>
+            <p class="text-white text-lg font-thin">Subscribe and receive the best information collections</p>
+        </div>
+        <div>
+            <img class="w-10 h-10 ms-5 rounded" src="./imagenes/p5logo.jpeg" alt="logo-p5"> -->
+        <!-- </div>
+    </div> -->
+
+
+
+    <!-- JAVASCRIPT COMPLEMENTARIO DE LA HOJA CON EVENTOS EN LA VISTA Y LA FUNCION PARA CERRAR SESIÓN-->
+
+    <script>
+
+        const user = JSON.parse(localStorage.getItem('userInfo'))
+        if (user) {
+            document.getElementById('2').style.display = "block";
+            document.getElementById('3').textContent = '';
+            document.getElementById('4').style.display = "block";
+            document.getElementById('nombre-usuario').textContent = user.nombre;
+            document.getElementById('ruta-login').style.display = "none";
+            document.getElementById('ruta-registro').style.display = "none";
+
+        } else {
+            document.getElementById('2').style.display = "none";
+            document.getElementById('3').textContent = 'LogIn'
+            document.getElementById('4').style.display = "none";
+        }
+
+        function cerrarSesion() {
+            console.log(user)
+            localStorage.removeItem('userInfo')
+            window.location.href = "../signin.html"
+        }
+
+
+        // Función para mostrar un mensaje predeterminado en el contenedor
+function showDefaultMessage() {
+    const defaultMessage = { message: "Enter your data and make request" };
+    renderResponse(defaultMessage, 'display-data');
+}
+
+// Llamar a la función para mostrar el mensaje predeterminado al cargar la página
+document.addEventListener('DOMContentLoaded', showDefaultMessage);
+
+        async function makeRequest() {
+    try {
+        // Obtiene el valor del input y el select
+        const apiKey = document.getElementById('apiKeyInput').value;
+        const selectedEndpoint = document.getElementById('endpointSelect').value;
+
+        // Validar que se haya ingresado la información necesaria
+        if (!apiKey || !selectedEndpoint) {
+            // Muestra un mensaje de error si falta información
+            if (!apiKey && !selectedEndpoint) {
+                // Mostrar mensaje específico si no se ingresó una API key y no se seleccionó un endpoint
+                document.getElementById('display-data').innerHTML = '<div class="json-response"><pre>{"error": "No API KEY and Select one Endpoint"}</pre></div>';
+            } else if (!apiKey) {
+                // Mostrar mensaje específico si no se ingresó una API key
+                document.getElementById('display-data').innerHTML = '<div class="json-response"><pre>{"error": "No API KEY"}</pre></div>';
+            } else {
+                // Mostrar mensaje genérico si falta información
+                document.getElementById('display-data').innerHTML = '<p style="color: red; font-size: 16px;">Select one Endpoint</p>';
+            }
+            return;
+        }
+
+        // Mostrar el spinner mientras se realiza la solicitud
+        showSpinner();
+
+        // Realiza la solicitud al servidor
+        const response = await axios.get(selectedEndpoint, {
+            headers: {
+                'Authorization': apiKey,
+                'Content-Type': 'application/json',
+            },
+        });
+
+        console.log('Respuesta del endpoint', response);
+
+        // Ocultar el spinner después de recibir la respuesta
+        hideSpinner();
+
+        // Renderizar la respuesta formateada en JSON
+        renderResponse(response.data, 'display-data');
+    } catch (error) {
+    // Ocultar el spinner en caso de error
+    hideSpinner();
+
+    // Manejo de errores
+    console.error('Error making request:', error);
+
+    // Variable para almacenar el contenido HTML
+    let content;
+
+    if (error.isAxiosError && error.response.status === 401) {
+        const errorMessage = error.response.data.message;
+
+        if (errorMessage === 'Invalid API Key') {
+            // Mostrar el mensaje "Invalid API Key" en formato JSON
+            content = `<div class="json-response"><pre>${JSON.stringify({ error: 'Invalid API KEY' }, null, 2)}</pre></div>`;
+        } else if (errorMessage === 'API Key Expired') {
+            // content = '<p style="color: red; font-size: 16px;">API KEY Expired</p>';
+            content = `<div class="json-response"><pre>${JSON.stringify({ error: errorMessage }, null, 2)}</pre></div>`;
+
+        } else {
+            // En otros casos de 401, mostrar el mensaje original en formato JSON
+            content = `<p style="color: red; font-size: 16px;">${JSON.stringify(error.response.data, null, 2)}</p>`;
+        }
+    } else if (error.isAxiosError && error.response.status === 403) {
+        const errorMessage = error.response.data.message;
+
+        if (errorMessage === 'API Acces Denied - Auth error "/negocio-premium"' || errorMessage === 'API KEY Acces Denied - Auth error PREMIUM') {
+            content = `<div class="json-response"><pre>${JSON.stringify({ error: errorMessage }, null, 2)}</pre></div>`;
+        } else {
+            // En otros casos de 403, mostrar el mensaje original en formato JSON
+            content = `<p style="color: red; font-size: 16px;">${JSON.stringify(error.response.data, null, 2)}</p>`;
+        }
+    } else {
+        // En otros casos, formatear y mostrar el mensaje de error en JSON
+        content = `<p style="color: red; font-size: 16px;">${JSON.stringify(error, null, 2)}</p>`;
+    }
+
+    // Establecer el contenido HTML una sola vez al final
+    document.getElementById('display-data').innerHTML = content;
+}
+        }
+
+// Función para mostrar el spinner
+function showSpinner() {
+    const spinnerElement = document.getElementById('loading-spinner');
+    if (spinnerElement) {
+        spinnerElement.classList.remove('hidden');
+    }
+}
+
+// Función para ocultar el spinner
+function hideSpinner() {
+    const spinnerElement = document.getElementById('loading-spinner');
+    if (spinnerElement) {
+        spinnerElement.classList.add('hidden');
+    }
+}
+
+// Función para renderizar la respuesta como JSON formateado
+function renderResponse(responseData, containerId) {
+  const responseContainer = document.getElementById(containerId);
+  const responseContent = document.createElement('div');
+  responseContent.classList.add('json-response');
+
+  // Crea un elemento <pre> para mostrar la respuesta como JSON
+  const preElement = document.createElement('pre');
+  preElement.textContent = JSON.stringify(responseData, null, 2);
+
+  // Agrega el <pre> al contenedor
+  responseContent.appendChild(preElement);
+
+  // Agrega el contenido al contenedor principal
+  responseContainer.innerHTML = '';
+  responseContainer.appendChild(responseContent);
+}
+        
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <script type="module" src="./scripts/test.js"></script>
+</body>
+
+</html>

@@ -17,7 +17,8 @@ async function loginUser(objectToSend) {
   // console.log(objectToSend);
   try {
     const { data } = await axios.post("/users/login", objectToSend);
-    const userInfo = data.user[0];
+    console.log(data)
+    const userInfo = data.user;
     localStorage.setItem("userInfo", JSON.stringify(userInfo));
     swal({
       title: "INICIASTE TU SESIÓN CORRECTAMENTE",

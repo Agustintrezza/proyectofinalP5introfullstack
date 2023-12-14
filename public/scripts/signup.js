@@ -18,7 +18,7 @@ async function createUser(objectToSend) {
   try {
     await axios.post("/users/crearusuario", objectToSend);
     swal({
-      title: "GRACIAS POR VER EL PROYECTO",
+      title: "CREASTE TU CUENTA CORRECTAMENTE",
       text: "Tú cuenta se creó de manera exitosa.",
       icon: "success",
       confirmButtonText: "Ok",
